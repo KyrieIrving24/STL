@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct cmp{
+	bool operator ()(int x,int y)
+	{
+		return x>y;   //从小到大输出（默认从大到小），于sort（）函数相反 
+	}
+};
+int main()
+{
+	priority_queue<int, vector<int>,cmp> q;
+	//priority_queue<int,vector<int>,greater<int> >q  另一种从小到大方式 
+	int a[5]={4,13,8,24,9};
+	int i;
+	for(i=0;i<5;i++)
+	{
+		q.push(a[i]);
+	}
+	for(i=0;i<5;i++)
+	{
+		cout<<q.top()<<' ';
+		q.pop();
+	}
+	cout<<endl;
+	return 0;
+}
